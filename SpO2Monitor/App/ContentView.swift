@@ -18,6 +18,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+// Note: Preview removed for SPM compatibility
+// #Preview {
+//     ContentView()
+// }
