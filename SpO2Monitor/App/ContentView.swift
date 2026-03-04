@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("hasAcceptedDisclaimer") private var hasAcceptedDisclaimer = false
+
     var body: some View {
-        VStack {
-            Text("SpO₂ Monitor")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+        if !hasAcceptedDisclaimer {
+            OnboardingView(didAccept: {
+                hasAcceptedDisclaimer = true
+            })
+        } else {
+            MeasurementView()
         }
-        .padding()
     }
 }
 
