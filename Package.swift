@@ -23,16 +23,13 @@ let package = Package(
             name: "SpO2Monitor",
             dependencies: [],
             path: "SpO2Monitor",
-            exclude: ["Resources/Info.plist"],
+            exclude: ["Resources/Info.plist", "Resources"],
             sources: [
                 "App",
                 "Managers",
                 "Models",
                 "Utilities",
                 "Views"
-            ],
-            resources: [
-                .process("Resources")
             ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
