@@ -1,0 +1,657 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001000000000000001 /* SpO2MonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000000000000001 /* SpO2MonitorApp.swift */; };
+		A1000002000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002000000000000001 /* ContentView.swift */; };
+		A1000003000000000000001 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000003000000000000001 /* CameraManager.swift */; };
+		A1000004000000000000001 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004000000000000001 /* MotionManager.swift */; };
+		A1000005000000000000001 /* SignalProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005000000000000001 /* SignalProcessor.swift */; };
+		A1000006000000000000001 /* MeasurementState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006000000000000001 /* MeasurementState.swift */; };
+		A1000007000000000000001 /* MeasurementResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007000000000000001 /* MeasurementResult.swift */; };
+		A1000008000000000000001 /* MeasurementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000008000000000000001 /* MeasurementError.swift */; };
+		A1000009000000000000001 /* PPGSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000009000000000000001 /* PPGSample.swift */; };
+		A1000010000000000000001 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010000000000000001 /* OnboardingView.swift */; };
+		A1000011000000000000001 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011000000000000001 /* WaveformView.swift */; };
+		A1000012000000000000001 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012000000000000001 /* ProgressRing.swift */; };
+		A1000013000000000000001 /* ResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013000000000000001 /* ResultCard.swift */; };
+		A1000014000000000000001 /* MeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014000000000000001 /* MeasurementView.swift */; };
+		A1000015000000000000001 /* PPGFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000015000000000000001 /* PPGFilter.swift */; };
+		A1000016000000000000001 /* PeakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000016000000000000001 /* PeakDetector.swift */; };
+		A1000017000000000000001 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2000017000000000000001 /* Info.plist */; };
+		A1000018000000000000001 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000018000000000000001 /* AVFoundation.framework */; };
+		A1000019000000000000001 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000019000000000000001 /* Accelerate.framework */; };
+		A1000020000000000000001 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000020000000000000001 /* CoreMotion.framework */; };
+		A1000021000000000000001 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000021000000000000001 /* HealthKit.framework */; };
+		A1000022000000000000001 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000022000000000000001 /* SwiftUI.framework */; };
+		A1000023000000000000001 /* SpO2MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000023000000000000001 /* SpO2MonitorTests.swift */; };
+		A1000024000000000000001 /* CameraManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000024000000000000001 /* CameraManagerTests.swift */; };
+		A1000025000000000000001 /* MotionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000025000000000000001 /* MotionManagerTests.swift */; };
+		A1000026000000000000001 /* SignalProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000026000000000000001 /* SignalProcessorTests.swift */; };
+		A1000027000000000000001 /* PPGFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000027000000000000001 /* PPGFilterTests.swift */; };
+		A1000028000000000000001 /* PeakDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000028000000000000001 /* PeakDetectorTests.swift */; };
+		A1000029000000000000001 /* FullMeasurementCycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000029000000000000001 /* FullMeasurementCycleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A3000001000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4000001000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5000001000000000000001;
+			remoteInfo = SpO2Monitor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A2000001000000000000001 /* SpO2MonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpO2MonitorApp.swift; sourceTree = "<group>"; };
+		A2000002000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2000003000000000000001 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		A2000004000000000000001 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		A2000005000000000000001 /* SignalProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProcessor.swift; sourceTree = "<group>"; };
+		A2000006000000000000001 /* MeasurementState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementState.swift; sourceTree = "<group>"; };
+		A2000007000000000000001 /* MeasurementResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementResult.swift; sourceTree = "<group>"; };
+		A2000008000000000000001 /* MeasurementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementError.swift; sourceTree = "<group>"; };
+		A2000009000000000000001 /* PPGSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPGSample.swift; sourceTree = "<group>"; };
+		A2000010000000000000001 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A2000011000000000000001 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		A2000012000000000000001 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		A2000013000000000000001 /* ResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCard.swift; sourceTree = "<group>"; };
+		A2000014000000000000001 /* MeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementView.swift; sourceTree = "<group>"; };
+		A2000015000000000000001 /* PPGFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPGFilter.swift; sourceTree = "<group>"; };
+		A2000016000000000000001 /* PeakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakDetector.swift; sourceTree = "<group>"; };
+		A2000017000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000018000000000000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A2000019000000000000001 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A2000020000000000000001 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		A2000021000000000000001 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		A2000022000000000000001 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A5000001000000000000001 /* SpO2Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpO2Monitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5000002000000000000001 /* SpO2MonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpO2MonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000023000000000000001 /* SpO2MonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpO2MonitorTests.swift; sourceTree = "<group>"; };
+		A2000024000000000000001 /* CameraManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManagerTests.swift; sourceTree = "<group>"; };
+		A2000025000000000000001 /* MotionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManagerTests.swift; sourceTree = "<group>"; };
+		A2000026000000000000001 /* SignalProcessorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProcessorTests.swift; sourceTree = "<group>"; };
+		A2000027000000000000001 /* PPGFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPGFilterTests.swift; sourceTree = "<group>"; };
+		A2000028000000000000001 /* PeakDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeakDetectorTests.swift; sourceTree = "<group>"; };
+		A2000029000000000000001 /* FullMeasurementCycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMeasurementCycleTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6000001000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000018000000000000001 /* AVFoundation.framework in Frameworks */,
+				A1000019000000000000001 /* Accelerate.framework in Frameworks */,
+				A1000020000000000000001 /* CoreMotion.framework in Frameworks */,
+				A1000021000000000000001 /* HealthKit.framework in Frameworks */,
+				A1000022000000000000001 /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6000002000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7000001000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A7000002000000000000001 /* SpO2Monitor */,
+				A7000003000000000000001 /* SpO2MonitorTests */,
+				A7000004000000000000001 /* Frameworks */,
+				A7000005000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7000002000000000000001 /* SpO2Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				A7000006000000000000001 /* App */,
+				A7000007000000000000001 /* Managers */,
+				A7000008000000000000001 /* Models */,
+				A7000009000000000000001 /* Views */,
+				A7000010000000000000001 /* Utilities */,
+				A7000011000000000000001 /* Resources */,
+			);
+			path = SpO2Monitor;
+			sourceTree = "<group>";
+		};
+		A7000003000000000000001 /* SpO2MonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7000012000000000000001 /* Managers */,
+				A7000013000000000000001 /* Utilities */,
+				A7000014000000000000001 /* IntegrationTests */,
+			);
+			path = SpO2MonitorTests;
+			sourceTree = "<group>";
+		};
+		A7000004000000000000001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2000018000000000000001 /* AVFoundation.framework */,
+				A2000019000000000000001 /* Accelerate.framework */,
+				A2000020000000000000001 /* CoreMotion.framework */,
+				A2000021000000000000001 /* HealthKit.framework */,
+				A2000022000000000000001 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7000005000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5000001000000000000001 /* SpO2Monitor.app */,
+				A5000002000000000000001 /* SpO2MonitorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7000006000000000000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001000000000000001 /* SpO2MonitorApp.swift */,
+				A2000002000000000000001 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A7000007000000000000001 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A2000003000000000000001 /* CameraManager.swift */,
+				A2000004000000000000001 /* MotionManager.swift */,
+				A2000005000000000000001 /* SignalProcessor.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A7000008000000000000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2000006000000000000001 /* MeasurementState.swift */,
+				A2000007000000000000001 /* MeasurementResult.swift */,
+				A2000008000000000000001 /* MeasurementError.swift */,
+				A2000009000000000000001 /* PPGSample.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7000009000000000000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2000010000000000000001 /* OnboardingView.swift */,
+				A2000011000000000000001 /* WaveformView.swift */,
+				A2000012000000000000001 /* ProgressRing.swift */,
+				A2000013000000000000001 /* ResultCard.swift */,
+				A2000014000000000000001 /* MeasurementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7000010000000000000001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000015000000000000001 /* PPGFilter.swift */,
+				A2000016000000000000001 /* PeakDetector.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A7000011000000000000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2000017000000000000001 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7000012000000000000001 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A2000024000000000000001 /* CameraManagerTests.swift */,
+				A2000025000000000000001 /* MotionManagerTests.swift */,
+				A2000026000000000000001 /* SignalProcessorTests.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A7000013000000000000001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000027000000000000001 /* PPGFilterTests.swift */,
+				A2000028000000000000001 /* PeakDetectorTests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A7000014000000000000001 /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2000029000000000000001 /* FullMeasurementCycleTests.swift */,
+			);
+			path = IntegrationTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5000001000000000000001 /* SpO2Monitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8000001000000000000001 /* Build configuration list for PBXNativeTarget "SpO2Monitor" */;
+			buildPhases = (
+				A9000001000000000000001 /* Sources */,
+				A6000001000000000000001 /* Frameworks */,
+				A9000002000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpO2Monitor;
+			productName = SpO2Monitor;
+			productReference = A5000001000000000000001 /* SpO2Monitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5000002000000000000001 /* SpO2MonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8000002000000000000001 /* Build configuration list for PBXNativeTarget "SpO2MonitorTests" */;
+			buildPhases = (
+				A9000003000000000000001 /* Sources */,
+				A6000002000000000000001 /* Frameworks */,
+				A9000004000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9000005000000000000001 /* PBXTargetDependency */,
+			);
+			name = SpO2MonitorTests;
+			productName = SpO2MonitorTests;
+			productReference = A5000002000000000000001 /* SpO2MonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4000001000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A5000001000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A5000002000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A5000001000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A8000003000000000000001 /* Build configuration list for PBXProject "SpO2Monitor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7000001000000000000001;
+			productRefGroup = A7000005000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5000001000000000000001 /* SpO2Monitor */,
+				A5000002000000000000001 /* SpO2MonitorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9000002000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000017000000000000001 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9000004000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9000001000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001000000000000001 /* SpO2MonitorApp.swift in Sources */,
+				A1000002000000000000001 /* ContentView.swift in Sources */,
+				A1000003000000000000001 /* CameraManager.swift in Sources */,
+				A1000004000000000000001 /* MotionManager.swift in Sources */,
+				A1000005000000000000001 /* SignalProcessor.swift in Sources */,
+				A1000006000000000000001 /* MeasurementState.swift in Sources */,
+				A1000007000000000000001 /* MeasurementResult.swift in Sources */,
+				A1000008000000000000001 /* MeasurementError.swift in Sources */,
+				A1000009000000000000001 /* PPGSample.swift in Sources */,
+				A1000010000000000000001 /* OnboardingView.swift in Sources */,
+				A1000011000000000000001 /* WaveformView.swift in Sources */,
+				A1000012000000000000001 /* ProgressRing.swift in Sources */,
+				A1000013000000000000001 /* ResultCard.swift in Sources */,
+				A1000014000000000000001 /* MeasurementView.swift in Sources */,
+				A1000015000000000000001 /* PPGFilter.swift in Sources */,
+				A1000016000000000000001 /* PeakDetector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9000003000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000024000000000000001 /* CameraManagerTests.swift in Sources */,
+				A1000025000000000000001 /* MotionManagerTests.swift in Sources */,
+				A1000026000000000000001 /* SignalProcessorTests.swift in Sources */,
+				A1000027000000000000001 /* PPGFilterTests.swift in Sources */,
+				A1000028000000000000001 /* PeakDetectorTests.swift in Sources */,
+				A1000029000000000000001 /* FullMeasurementCycleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9000005000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5000001000000000000001 /* SpO2Monitor */;
+			targetProxy = A3000001000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA0000010000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0000020000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AA0000030000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/SpO2Monitor/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gibtang.SpO2Monitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_CONCURRENCY = strict;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA0000040000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/SpO2Monitor/Resources/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gibtang.SpO2Monitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_CONCURRENCY = strict;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA0000050000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gibtang.SpO2MonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_CONCURRENCY = strict;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpO2Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpO2Monitor";
+			};
+			name = Debug;
+		};
+		AA0000060000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gibtang.SpO2MonitorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_CONCURRENCY = strict;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpO2Monitor.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpO2Monitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8000001000000000000001 /* Build configuration list for PBXNativeTarget "SpO2Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000030000000000000001 /* Debug */,
+				AA0000040000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8000002000000000000001 /* Build configuration list for PBXNativeTarget "SpO2MonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000050000000000000001 /* Debug */,
+				AA0000060000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8000003000000000000001 /* Build configuration list for PBXProject "SpO2Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0000010000000000000001 /* Debug */,
+				AA0000020000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4000001000000000000001 /* Project object */;
+}
