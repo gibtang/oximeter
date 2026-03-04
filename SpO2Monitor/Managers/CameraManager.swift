@@ -251,11 +251,15 @@ actor CameraManager: NSObject, ObservableObject {
         if device.isExposureModeSupported(exposureMode) {
             device.exposureMode = exposureMode
 
-            // Set exposure duration
+            // Set exposure duration and ISO
             if let minDuration = device.activeFormat.minExposureDuration,
                let maxDuration = device.activeFormat.maxExposureDuration {
                 let clampedDuration = CMTimeClampToRange(exposureDuration, range: CMTimeRange(start: minDuration, end: maxDuration))
-                device.setExposureModeCustom(duration: clampedDuration, iso: AVCaptureDevice.ISO(format.activeMaxISO) ?? minISO)
+
+                // Clamp ISO to device's active format range
+                let clampedISO = min(maxISO, max(minISO, device.activeFormat.maxISO))
+
+                device.setExposureModeCustom(duration: clampedDuration, iso: clampedISO)
             }
         }
 
@@ -301,34 +305,50 @@ actor CameraManager: NSObject, ObservableObject {
     }
 
     /// Starts the capture session.
-    func startSession() async {
+    func startSession() async throws {
         guard let session = captureSession, !isSessionRunning else {
             return
         }
 
-        Task.detached { @MainActor in
+        await MainActor.run {
             session.startRunning()
         }
 
-        // Wait for session to start
-        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1s
+        // Wait for session to start and verify state
+        let deadline = Date().addingTimeInterval(2.0)
+        while Date() < deadline {
+            try? await Task.sleep(nanoseconds: 10_000_000) // 0.01s
+            if session.isRunning {
+                break
+            }
+        }
 
-        isSessionRunning = session.isRunning
+        guard session.isRunning else {
+            throw CameraError.configurationFailed
+        }
+
+        isSessionRunning = true
         print("🎬 Camera session started")
     }
 
     /// Stops the capture session.
-    func stopSession() async {
+    func stopSession() async throws {
         guard let session = captureSession, isSessionRunning else {
             return
         }
 
-        Task.detached { @MainActor in
+        await MainActor.run {
             session.stopRunning()
         }
 
-        // Wait for session to stop
-        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1s
+        // Wait for session to stop and verify state
+        let deadline = Date().addingTimeInterval(2.0)
+        while Date() < deadline {
+            try? await Task.sleep(nanoseconds: 10_000_000) // 0.01s
+            if !session.isRunning {
+                break
+            }
+        }
 
         isSessionRunning = session.isRunning
         print("🛑 Camera session stopped")
@@ -396,7 +416,7 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
 
-        // Extract ROI and calculate mean R/B values
+        // Extract ROI and calculate mean R/B values on the delegate queue
         let (meanRed, meanBlue) = extractROIMeanValues(from: pixelBuffer)
 
         // Get timestamp
@@ -405,10 +425,15 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Create PPG sample
         let sample = PPGSample(red: meanRed, blue: meanBlue, timestamp: timestamp)
 
-        // Emit to stream (using actor-isolated access)
-        Task { @MainActor in
-            self.continuation?.yield(sample)
+        // Emit to stream using proper actor isolation
+        Task {
+            await self.yieldSample(sample)
         }
+    }
+
+    /// Helper method to yield sample within actor isolation
+    private func yieldSample(_ sample: PPGSample) {
+        continuation?.yield(sample)
     }
 
     /// Extracts a 100×100 ROI from the center of the image and calculates mean R/B values.
