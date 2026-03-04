@@ -135,7 +135,9 @@ struct OnboardingView: View {
             .padding()
         }
         .navigationTitle("Disclaimer")
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 

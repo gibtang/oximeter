@@ -9,6 +9,12 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+import UIKit
+#else
+import AppKit
+#endif
+
 struct ResultCard: View {
     // MARK: - Properties
 
@@ -25,6 +31,22 @@ struct ResultCard: View {
     }
 
     // MARK: - Computed Properties
+
+    private var backgroundColor: Color {
+        #if canImport(UIKit)
+        return Color(UIColor.systemBackground)
+        #else
+        return Color(NSColor.controlBackgroundColor)
+        #endif
+    }
+
+    private var groupedBackgroundColor: Color {
+        #if canImport(UIKit)
+        return Color(UIColor.systemGroupedBackground)
+        #else
+        return Color(NSColor.windowBackgroundColor)
+        #endif
+    }
 
     private var spo2Color: Color {
         if spo2 >= 95 {
@@ -146,44 +168,12 @@ struct ResultCard: View {
         .padding(24)
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color(.systemBackground))
+                .fill(backgroundColor)
                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 4)
         )
         .padding(.horizontal, 16)
     }
 }
 
-// MARK: - Preview
-
-#Preview("Normal SpO2") {
-    ResultCard(
-        spo2: 98,
-        heartRate: 72,
-        confidence: .high,
-        timestamp: Date(),
-        onRetry: {}
-    )
-    .background(Color(.systemGroupedBackground))
-}
-
-#Preview("Low SpO2") {
-    ResultCard(
-        spo2: 88,
-        heartRate: 95,
-        confidence: .low,
-        timestamp: Date().addingTimeInterval(-3600),
-        onRetry: {}
-    )
-    .background(Color(.systemGroupedBackground))
-}
-
-#Preview("Medium SpO2") {
-    ResultCard(
-        spo2: 92,
-        heartRate: 68,
-        confidence: .medium,
-        timestamp: Date(),
-        onRetry: {}
-    )
-    .background(Color(.systemGroupedBackground))
-}
+// Note: Previews removed for SPM compatibility
+// #Preview("Normal SpO2") { ... }
