@@ -23,9 +23,8 @@ let package = Package(
             name: "SpO2Monitor",
             dependencies: [],
             path: "SpO2Monitor",
-            exclude: ["Resources/Info.plist", "Resources"],
+            exclude: ["Resources/Info.plist", "Resources", "App/SpO2MonitorApp.swift", "App/ContentView.swift"],
             sources: [
-                "App",
                 "Managers",
                 "Models",
                 "Utilities",
