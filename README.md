@@ -278,3 +278,6 @@ This app is for **wellness purposes only** and is not intended to diagnose, trea
 - [SpO₂ Measurement Using Smartphone Cameras](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6233640/)
 - [Apple AVFoundation Documentation](https://developer.apple.com/documentation/avfoundation)
 - [Apple CoreMotion Documentation](https://developer.apple.com/documentation/coremotion)
+
+## Functionality
+SpO2 Monitor application for iOS.
