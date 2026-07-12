@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="SpO2 Monitor measures blood oxygen and heart rate using iPhone camera-based PPG, with a clean early-access landing page and clear medical positioning." />
+  <title>SpO2 Monitor | Camera-based blood oxygen tracking</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">O2</div>
+        <div>
+          <div>SpO2 Monitor</div>
+          <div style="font-size:12px;color:var(--muted);font-weight:600;">Camera-based blood oxygen tracking</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <span class="eyebrow">Join early access</span>
+        <h1>Measure SpO2 and heart rate with the iPhone camera, then see whether people actually want it.</h1>
+        <p class="lede">SpO2 Monitor is a wellness app for reflectance PPG measurement. The landing page keeps the ask simple: one email, one qualifier, and a direct line to the product for people who want to follow along.</p>
+        <div class="grid-stats">
+          <div class="stat"><strong>30 sec</strong><span>measurement flow with real-time feedback</span></div>
+          <div class="stat"><strong>1 form</strong><span>email plus one qualifier above the fold</span></div>
+          <div class="stat"><strong>3 pages</strong><span>privacy, terms, and contact linked from launch</span></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-label="Early access signup">
+        <div class="panel-header">
+          <h2>Join early access</h2>
+        </div>
+        <div class="panel-body">
+          <div class="wave" aria-hidden="true">
+            <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="line" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#1456d8" />
+                  <stop offset="100%" stop-color="#48a4ff" />
+                </linearGradient>
+              </defs>
+              <path d="M0,220 C80,220 90,110 160,110 C240,110 240,280 330,280 C420,280 420,120 500,120 C590,120 610,250 680,250 C760,250 780,160 850,160 C940,160 950,80 1040,80 C1120,80 1135,180 1200,180" fill="none" stroke="url(#line)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0,300 C90,300 100,250 170,250 C250,250 260,310 340,310 C430,310 450,240 520,240 C620,240 640,310 720,310 C810,310 840,210 910,210 C1000,210 1020,260 1200,260" fill="none" stroke="#b9cff8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <form class="form" id="signup-form">
+            <input id="email" type="email" name="email" placeholder="Email address" required />
+            <div class="row">
+              <select id="qualifier" name="qualifier">
+                <option value="personal">Personal wellness</option>
+                <option value="caregiver">Caregiver / family support</option>
+                <option value="athlete">Athlete / training</option>
+                <option value="clinical">Clinical / research</option>
+              </select>
+              <button type="submit">Join early access</button>
+            </div>
+            <p class="fineprint">By joining, you agree we may contact you about SpO2 Monitor and use your submission to evaluate product interest.</p>
+            <p class="message" id="message" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <section class="section">
+      <h2>Why people might care</h2>
+      <div class="cards">
+        <div class="card"><strong>Instant feedback</strong><p>The flow is short and visual so users can tell what is happening while their finger is on the camera.</p></div>
+        <div class="card"><strong>Clear use case</strong><p>The site frames the app as a wellness tool, not a vague health gadget, which makes the intent obvious.</p></div>
+        <div class="card"><strong>Simple demand signal</strong><p>One qualifier helps separate curiosity from real interest without asking people to fill out a survey.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> SpO2 Monitor</div>
+      <div class="nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LEAD_CAPTURE_URL = 'https://check-mcc.sg/api/early-access';
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('signup-form').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value.trim();
+      var qualifier = document.getElementById('qualifier').value;
+      var message = document.getElementById('message');
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        message.hidden = false;
+        message.style.color = '#b42318';
+        message.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      try {
+        const response = await fetch(LEAD_CAPTURE_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            projectKey: 'oximeter',
+            projectName: 'SpO2 Monitor',
+            email: email,
+            qualifierKey: 'use_case',
+            qualifierLabel: 'What are you using it for first?',
+            qualifier: qualifier,
+            consent: true,
+            honeypot: '',
+            source: 'spo2-monitor-site',
+            sourcePath: '/',
+            siteDomain: window.location.hostname,
+          }),
+        });
+        const payload = await response.json().catch(function () { return {}; });
+        if (!response.ok) {
+          throw new Error(payload.message || 'Something went wrong.');
+        }
+        message.hidden = false;
+        message.style.color = '#116846';
+        message.textContent = payload.message || 'You are on the early access list.';
+        event.target.reset();
+      } catch (error) {
+        message.hidden = false;
+        message.style.color = '#b42318';
+        message.textContent = error instanceof Error ? error.message : 'Something went wrong.';
+      }
+    });
+  </script>
+</body>
+</html>
