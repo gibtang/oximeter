@@ -1,14 +1,18 @@
-# ---- 1. Node.js API server deps ----
+# ---- 1. Node.js deps ----
 FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package.json ./
 RUN npm install --omit=dev --ignore-scripts
 
 # ---- 2. Final image ----
-FROM nginx:alpine
+FROM node:22-alpine
 COPY nginx.conf.template /tmp/default.conf.template
 RUN sed 's|__LEAD_CAPTURE_URL__|http://127.0.0.1:3000/api/early-access|' \
     /tmp/default.conf.template > /etc/nginx/conf.d/default.conf
+
+# Install nginx
+RUN apk add --no-cache nginx
+
 COPY site/ /usr/share/nginx/html/
 
 # Copy Node.js API server and deps
